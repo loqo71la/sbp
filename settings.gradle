@@ -1,1 +1,6 @@
-rootProject.name = 'bp'
+rootProject.name = 'sbp'
+
+include 'sbp-account'
+include 'sbp-base'
+include 'sbp-client'
+include 'sbp-transaction'

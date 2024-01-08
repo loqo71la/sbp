@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':sbp-base')
+    implementation 'jakarta.validation:jakarta.validation-api'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+
+    testRuntimeOnly 'com.h2database:h2:2.2.220'
+}
