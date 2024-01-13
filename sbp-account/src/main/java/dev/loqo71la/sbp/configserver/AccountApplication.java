@@ -1,4 +1,4 @@
-package dev.loqo71la.sbp.account;
+package dev.loqo71la.sbp.configserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

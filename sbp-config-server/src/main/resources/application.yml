@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: sbp-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${SBP_CONFIG_DATA:https://github.com/loqo71la/sbp-config-data}
+          clone-on-start: true

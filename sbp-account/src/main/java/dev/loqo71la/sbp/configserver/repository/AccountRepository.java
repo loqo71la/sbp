@@ -1,6 +1,6 @@
-package dev.loqo71la.sbp.account.repository;
+package dev.loqo71la.sbp.configserver.repository;
 
-import dev.loqo71la.sbp.account.model.Account;
+import dev.loqo71la.sbp.configserver.model.Account;
 import dev.loqo71la.sbp.base.repository.BaseRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

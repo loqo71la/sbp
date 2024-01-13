@@ -1,7 +1,7 @@
-package dev.loqo71la.sbp.account.controller;
+package dev.loqo71la.sbp.configserver.controller;
 
-import dev.loqo71la.sbp.account.model.Account;
-import dev.loqo71la.sbp.account.service.AccountService;
+import dev.loqo71la.sbp.configserver.model.Account;
+import dev.loqo71la.sbp.configserver.service.AccountService;
 import dev.loqo71la.sbp.base.controller.BaseController;
 import dev.loqo71la.sbp.base.service.CrudService;
 import org.springframework.beans.factory.annotation.Autowired;

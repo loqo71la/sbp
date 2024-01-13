@@ -1,4 +1,4 @@
-package dev.loqo71la.sbp.account.model;
+package dev.loqo71la.sbp.configserver.model;
 
 public enum AccountType {
     CHECKING,
