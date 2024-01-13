@@ -1,4 +1,4 @@
-package dev.loqo71la.sbp.account.model;
+package dev.loqo71la.sbp.configserver.model;
 
 import dev.loqo71la.sbp.base.model.Model;
 import jakarta.persistence.Column;

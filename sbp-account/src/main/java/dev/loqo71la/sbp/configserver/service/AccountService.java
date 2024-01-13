@@ -1,7 +1,7 @@
-package dev.loqo71la.sbp.account.service;
+package dev.loqo71la.sbp.configserver.service;
 
-import dev.loqo71la.sbp.account.model.Account;
-import dev.loqo71la.sbp.account.repository.AccountRepository;
+import dev.loqo71la.sbp.configserver.model.Account;
+import dev.loqo71la.sbp.configserver.repository.AccountRepository;
 import dev.loqo71la.sbp.base.repository.BaseRepository;
 import dev.loqo71la.sbp.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;

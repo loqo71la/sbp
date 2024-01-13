@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: sbp-client
+  config:
+    import: optional:configserver:${SBP_CONFIG_SERVER:http://localhost:8081}
