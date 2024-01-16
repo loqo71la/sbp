@@ -1,12 +1,13 @@
 package dev.loqo71la.sbp.base.controller;
 
+import dev.loqo71la.sbp.base.dto.PageDto;
 import dev.loqo71la.sbp.base.dto.ResponseDto;
 import dev.loqo71la.sbp.base.model.Model;
 import dev.loqo71la.sbp.base.service.CrudService;
 import dev.loqo71la.sbp.base.util.HttpUtil;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,10 +35,11 @@ public abstract class BaseController<T extends Model> {
      * @return a list of model.
      */
     @GetMapping
-    public Slice<T> getAll(@RequestParam(defaultValue = "1") int page,
-                           @RequestParam(defaultValue = "50") int limit) {
+    public PageDto<T> getAll(@RequestParam(defaultValue = "1") int page,
+                             @RequestParam(defaultValue = "50") int limit) {
         var pageable = buildPageable(page, limit);
-        return getService().readAll(pageable);
+        var pageModel = getService().readAll(pageable);
+        return toPageDto(pageModel);
     }
 
     /**
@@ -89,6 +91,7 @@ public abstract class BaseController<T extends Model> {
         return success(HttpUtil.Action.DELETED);
     }
 
+
     /**
      * Gets the current model service.
      *
@@ -104,6 +107,13 @@ public abstract class BaseController<T extends Model> {
      * @return a pageable.
      */
     protected Pageable buildPageable(int page, int limit) {
-        return PageRequest.of(Math.max(page - 1, 0), limit);
+        return PageRequest.of(Math.max(page - 1, 0), Math.max(limit, 1));
+    }
+
+    protected PageDto<T> toPageDto(Page<T> page) {
+        return new PageDto<>((int) page.getTotalElements(),
+                Math.max(page.getTotalPages(), 1),
+                page.getNumber() + 1,
+                page.getContent());
     }
 }
