@@ -22,34 +22,12 @@ public class TransactionController extends BaseController<Transaction> {
     private TransactionService transactionService;
 
     /**
-     * HTTP Post method.
+     * Gets the transaction service.
      *
-     * @return the details of the processed request.
+     * @return the transaction service.
      */
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public ResponseDto post(@RequestBody TransactionDto dto) {
-////        var model = mapper.toModel(dto);
-////        repository.save(model);
-//        return HttpUtil.success(HttpUtil.Action.CREATED);
-//    }
     @Override
     protected CrudService<Transaction> getService() {
         return transactionService;
     }
-
-//    @GetMapping
-//    public PageDto<TransactionDto> getAll(@RequestParam(defaultValue = "1") int page,
-//                                          @RequestParam(defaultValue = "50") int limit) {
-//        var pageable = PageRequest.of(Math.max(page - 1, 0), limit);
-//        var result = repository.findAll(pageable);
-//        return new PageDto<>(
-//                (int) result.getTotalElements(),
-//                result.getTotalPages(),
-//                result.getNumber(),
-//                result.get()
-//                        .map(mapper::toDto)
-//                        .collect(Collectors.toList())
-//        );
-//    }
 }
